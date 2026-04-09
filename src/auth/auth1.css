@@ -1,0 +1,65 @@
+
+.login-home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.login-home-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.login-home-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+.login-box {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.login-box:nth-child(1) {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+.login-box:nth-child(2) {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+}
+
+.login-box:nth-child(3) {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+.login-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  padding: 5px;
+}
+.login-box:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}

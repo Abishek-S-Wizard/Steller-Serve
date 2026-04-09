@@ -1,0 +1,74 @@
+/* src/auth/auth.css */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  font-family: Arial, sans-serif;
+}
+
+.auth-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 500px;
+  color: blue;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color:blue;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form label {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.auth-form input {
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border: none;
+  background-color: #0d47a1;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background-color: #1565c0;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}

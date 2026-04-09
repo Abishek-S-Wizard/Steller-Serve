@@ -1,0 +1,84 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: linear-gradient(
+      135deg, 
+      rgba(40, 40, 60, 0.95), 
+      rgba(20, 20, 30, 0.95)
+    ),
+    url('https://images.unsplash.com/photo-1618221376387-5b7d69f8cf4f') no-repeat center/cover;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+}
+
+/* Logo */
+.logo-img {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffe600;
+}
+
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #ffe600;
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* Login Button */
+.login-btn {
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+  transition: all 0.35s ease;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #ee0979, #ff6a00);
+  box-shadow: 0 6px 20px rgba(238, 9, 121, 0.5);
+  transform: scale(1.05);
+  color: white;
+}

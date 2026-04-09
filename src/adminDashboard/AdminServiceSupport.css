@@ -1,0 +1,120 @@
+
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0d47a1;
+  font-size: 24px;
+}
+
+
+.support-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.support-table th,
+.support-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+.support-table th {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+}
+
+.support-table tr:hover {
+  background: #f1f1f1;
+}
+
+
+.status-open {
+  color: #e53935;
+  font-weight: bold;
+}
+
+.status-resolved {
+  color: #43a047;
+  font-weight: bold;
+}
+
+
+.btn-primary {
+  padding: 6px 12px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #0d47a1;
+}
+
+/* Reply Card */
+.dashboard-card {
+  margin: 20px auto;
+  max-width: 600px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.input-box {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+/* Table Headings */
+.ticket-section-title {
+  margin: 20px 0 10px;
+  color: #1976d2;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Scrollable Table (optional for many tickets) */
+.support-table tbody {
+  max-height: 400px;
+  overflow-y: auto;
+  display: block;
+}
+
+.support-table thead,
+.support-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Success message for submission */
+.success-msg {
+  color: #43a047;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}

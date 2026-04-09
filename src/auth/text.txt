@@ -1,0 +1,91 @@
+// src/services/AuthService.js
+import { supabase } from "../supabaseClient";
+
+// Step 1: Register user (email confirmation enabled)
+export async function registerUser(email, password, fullName, roleName, phone, address, servicetype, experience, location = null) {
+  // Create user in Supabase Auth
+  const { data, error } = await supabase.auth.signUp({ email, password });
+  if (error) throw error;
+
+  const user = data.user;
+
+  // Do NOT sign in immediately since email confirmation is required
+  // Profile will be inserted after user confirms email and logs in
+
+  return {
+    message: "Account created! Please check your email to confirm your account before logging in.",
+    userId: user.id, // can be used later if needed
+    role: roleName,
+    fullName,
+    phone,
+    address,
+    servicetype,
+    experience,
+    location
+  };
+}
+
+// Step 2: Insert profile AFTER email confirmation
+export async function insertUserProfile(userId, fullName, email, roleName, phone, address, servicetype, experience, location = null) {
+  const { data, error } = await supabase.from("profiles").insert([
+    {
+      id: userId,
+      name: fullName,
+      email,
+      role: roleName,
+      phone,
+      address,
+      servicetype,
+      experience,
+      location,
+    },
+  ]).maybeSingle(); // ✅ prevents errors if already exists
+
+  if (error) throw error;
+
+  return data;
+}
+
+// Login with profile fetch
+export async function loginUser(email, password) {
+  // Step 1: Sign in
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) throw error;
+
+  const user = data.user;
+
+  // Step 2: Check if email is confirmed
+  if (!user.confirmed_at) {
+    throw new Error("Email not confirmed. Please check your inbox and confirm your email.");
+  }
+
+  // Step 3: Fetch profile (maybeSingle to avoid 'single' errors)
+  let { data: profile, error: profileError } = await supabase
+    .from("profiles")
+    .select("name, role, email, phone, address, servicetype, experience, location")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (profileError) throw profileError;
+
+  // Step 4: Insert profile if missing (edge case)
+  if (!profile) {
+    const { data: newProfile, error: insertError } = await supabase
+      .from("profiles")
+      .insert([
+        {
+          id: user.id,
+          name: user.user_metadata?.full_name || "",
+          email: user.email,
+          role: "user", // default role
+        },
+      ])
+      .select()
+      .maybeSingle();
+
+    if (insertError) throw insertError;
+    profile = newProfile;
+  }
+
+  return { user, profile };
+}

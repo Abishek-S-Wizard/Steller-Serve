@@ -1,0 +1,88 @@
+.userdetails-container {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.userdetails-container h2 {
+  margin-bottom: 15px;
+  color: #0d47a1;
+}
+
+.userdetails-view p {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #333;
+  text-align: left;
+}
+
+.userdetails-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.userdetails-form label {
+  font-weight: 600;
+  color: #333;
+}
+
+.userdetails-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.userdetails-form input:focus {
+  border-color: #0d47a1;
+  box-shadow: 0px 0px 5px rgba(13, 71, 161, 0.4);
+}
+
+.edit-btn, .save-btn, .cancel-btn {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #1565c0;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0d47a1;
+}
+
+.save-btn {
+  background: #0d47a1;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #1565c0;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: black;
+}
+
+.cancel-btn:hover {
+  background: #999;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,74 @@
+.how-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f4f8fb, #eaf3f8);
+  text-align: center;
+}
+
+.how-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #333;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  max-width: 300px;
+  flex: 1 1 calc(33.333% - 30px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+}
+
+.step:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+  border-color: #00aaff;
+}
+
+.step-img-box {
+  background: #f0faff;
+  border-radius: 50%;
+  padding: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.step:hover .step-img-box {
+  background: #00aaff;
+}
+
+.step-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.step h3 span {
+  color: #00aaff;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
